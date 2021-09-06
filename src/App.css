@@ -354,3 +354,18 @@ input[type="radio"]:disabled + label{
   border: none;
   color:rgb(190, 59, 59) ;
 }
+
+#size_head{
+  float: left;
+}
+
+#sizechart_table{
+  font-size: medium;
+}
+.close{
+  border: none;
+  font-size: small;
+  background-color: transparent;
+  transform: scale(1.5);
+  float: right;
+}

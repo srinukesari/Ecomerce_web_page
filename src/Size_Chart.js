@@ -1,5 +1,10 @@
 import React, { Component } from 'react'
 import './App.css'
+import {Button} from 'react-bootstrap'
+import ReactDOM from 'react-dom';
+import Modal from 'react-modal';
+
+Modal.setAppElement('#root');
 
 class Size_Chart extends Component {
     constructor(props) {
@@ -10,19 +15,33 @@ class Size_Chart extends Component {
       }
     }
 
+    show_modal =() =>{
+      this.setState({
+        show_sizechart:true
+      });
+    }
   render() {
+    const customStyles = {
+      content: {
+        top: '50%',
+        left: '50%',
+        right: 'auto',
+        bottom: 'auto',
+        marginRight: '-50%',
+        transform: 'translate(-50%, -50%)',
+      },
+    };
     return (
       <div className = "size_chart">
-        <button type="button"  className = "size_chart_button" data-toggle="modal" data-target="#myModal">SIZE CHART</button>
-        <div id="myModal" class="modal fade" role="dialog">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">SIZE CHART (in Inches)</h4>
-                </div>
-                <div class="modal-body">
-                <table class="table table-striped">
+        <button className = "size_chart_button" onClick = {this.show_modal}>SIZE CHART</button>
+        <Modal
+        isOpen={this.state.show_sizechart}
+        onRequestClose={() => { this.setState({show_sizechart:false})}}
+        style={customStyles}
+        contentLabel="Example Modal" >
+        <h2 id = "size_head">Size Chart (in Inches)</h2>
+        <button className = "close" onClick={() => { this.setState({show_sizechart:false})}}>X</button>
+        <table class="table table-striped" id = "sizechart_table">
                 <thead>
                     <tr>
                     <th>Size</th>
@@ -51,21 +70,14 @@ class Size_Chart extends Component {
                     <td>17.8</td>
                     </tr>
                     <tr>
-                    <td>Extra - Large</td>
+                    <td>X-Large</td>
                     <td>44.5</td>
                     <td>29.0</td>
                     <td>18.6</td>
                     </tr>
                 </tbody>
             </table>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
-            </div>
-
-        </div>
-        </div>
+        </Modal>
       </div>
     )
   }
