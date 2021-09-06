@@ -1,38 +1,369 @@
 .App {
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.navbar{
+  border-bottom:2px solid red;
+  border-radius: 0;
+  padding: 2rem;
+  font-size: larger;
+}
+#title_color{
+  color:rgb(190, 59, 59);
+}
+img {
+  max-width: 100%;
+}
+#cart{
+  font-family: Arial, Helvetica, sans-serif;
+}
+#left{
+  padding: 3rem;
+  overflow: auto;
+  height: 580px;
+  min-height: 200px;
+}
+#right{
+  padding:2rem;
+  padding-top:5rem;
+}
+.prev_button{
+  border: None;
+  padding: 0rem 3.5rem;
+  background-color: transparent;
+  float: left;
+  font-size: xx-large;
+  font-weight: bolder;
+}
+.next_button{
+  border: None;
+  padding: 0rem 3.5rem;
+  background-color: transparent;
+  float: right;
+  font-size: xx-large;
+  font-weight: bolder;
+}
+.next_button:hover , .prev_button:hover{
+  border: None;
+  background-color: transparent;
+  color:tomato;
+  font-size: xx-large;
+  font-weight: bolder;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+#brand{
+  font-size: 2.5rem;
+  font-weight: bolder;
+}
+#desc{
+  font-size: 2.2rem;
+  font-weight: lighter;
+}
+#rating{
+  font-size: 1.5rem;
+  font-weight: bolder; 
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+#underline{
+  margin-top: 1rem;
+  border-top: 1px solid burlywood;
 }
 
-.App-link {
-  color: #61dafb;
+#dis_cost{
+  font-size: 2.5rem;
+  font-weight: bolder;
+  padding-right: 2rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#cost{
+  font-size: 2rem;
+  font-weight: lighter;
+  padding-right: 1rem;
+  text-decoration: line-through;
 }
+
+#discount{
+  font-size: 2rem;
+  font-weight: bold;
+  color: palevioletred;
+}
+
+#taxes{
+  font-size: 1.5rem;
+  font-weight: bold;
+  color:rgb(19, 108, 143)
+}
+
+#size{
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding-right: 4rem;
+  padding-bottom: 2rem;
+}
+
+#chart{
+  padding-bottom: 2rem;
+  font-size: 1.4rem;
+  font-weight: bold;
+  background-color: transparent;
+  border: none;
+  color:rgb(190, 59, 59) ;
+}
+
+#err_msg{
+  font-size: 1.5rem;
+  font-weight: normal;
+  color:red;
+  padding-top: 2rem;
+  padding-left: 2rem;
+}
+.addcart{
+  font-size: 1.7rem;
+  margin-top: 2rem;
+  font-weight: bolder;
+  padding:1rem 2rem;
+  background-color: transparent;
+  border: 2px solid rgb(190, 59, 59) ;
+  border-radius: 3%;
+  color:rgb(190, 59, 59) ;
+}
+
+.addcart:hover{
+  font-size: 1.7rem;
+  margin-top: 2rem;
+  font-weight: bolder;
+  padding:1rem 2rem;
+  border-radius: 3%;
+  background-color: rgb(190, 59, 59);
+  border: 1px solid rgb(190, 59, 59) ;
+  color:whitesmoke ;
+}
+
+/* billing page */
+#mycart_title{
+  padding-left: 1rem;
+}
+.empty_cart{
+  float: left;
+  padding: 1rem 2rem;
+  font-family: Arial, Helvetica, sans-serif;
+  width: 65rem;
+  margin-top:3rem;
+}
+.cart_items{
+  float: left;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  padding: 1rem 2rem;
+  width: 65rem;
+  margin-top:3rem;
+}
+.cart_img{
+  float: left;
+  width:20rem;
+}
+.cart_item_details{
+  float: left;
+  width: 41rem;
+}
+#cart_item_brand{
+  font-size: x-large;
+  font-weight: bold;
+  padding: 2rem;
+}
+#cart_item_cost{
+  font-size: large;
+  font-weight: bold;
+  float: right;
+  padding-top: .5rem;
+}
+#cart_item_desc{
+  font-size: medium;
+  font-weight: normal;
+  padding: 2rem;
+}
+#cart_item_size{
+  font-size: medium;
+  font-weight: bold;
+  padding:2rem 7rem 2rem 2rem;
+}
+#cart_item_quantity{
+  font-size: medium;
+  font-weight: bold;
+  padding:.5rem 1rem;
+}
+.quantity_button{
+  border: None;
+  background-color: transparent;
+  font-size: x-large;
+  padding:.5rem 1rem;
+}
+.quantity_button:hover{
+  background-color: transparent;
+  font-size: x-large;
+  color:red;
+  padding:.5rem 1rem;
+}
+
+.remove_button{
+  float: right;
+  padding: .5rem 4rem;
+  background-color: whitesmoke;
+  color :rgb(190, 59, 59);
+  font-size: medium;
+  font-weight: bold;
+  border: 2px solid rgb(190, 59, 59);
+}
+.remove_button:hover{
+  float: right;
+  padding: .5rem 4rem;
+  background-color: rgb(190, 59, 59);
+  color :whitesmoke;
+  font-size: medium;
+  font-weight: bold;
+  border: 2px solid rgb(190, 59, 59);
+}
+.bill{
+  margin:3rem 4rem;
+  width:400px;
+  height: auto;
+  float: left;
+  max-width: 100%;
+  padding:2rem;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#left_bill{
+  font-size: medium;
+  font-weight: unset;
+
+}
+#right_bill{
+  right: 0;
+  float:right;
+  font-size: medium;
+  font-weight: lighter;
+  padding-right: 2rem;
+}
+#dis_amount{
+  right: 0;
+  float:right;
+  font-size: medium;
+  font-weight: bold;
+  padding-right: 2rem;
+  color:tomato;
+}
+#free_tag{
+  color:rgb(221, 55, 13);
+}
+
+.check_out_button{
+  width: 100%;
+  max-width: 100%;
+  padding:0.5rem 0rem;
+  font-size: larger;
+  color:whitesmoke;
+  font-weight: bold;
+  background-color: tomato;
+  border: 2px solid tomato;
+}
+
+.check_out_button:hover{
+  width: 100%;
+  max-width: 100%;
+  padding:0.5rem 0rem;
+  font-size: larger;
+  color:tomato;
+  font-weight: bold;
+  background-color: whitesmoke;
+  border: 2px solid tomato;
+}
+/* for radio buttons*/
+
+.section{
+  padding-top:1rem ;
+}
+
+.small , .medium , .large, .xlarge{
+   border: 2px solid lightblue;
+   padding : 1rem 4rem;
+   font-weight: bolder;
+   font-size: medium;
+   cursor: pointer;
+}
+
+label.small{
+   border-radius: 100px 0px 0px 100px;
+}
+
+label.xlarge{
+   border-radius: 0px 100px 100px 0px;
+}
+
+
+.section input[type="radio"]{
+   display: none;
+}
+
+input[type="radio"]:checked + label{
+ border: 2.5px solid palevioletred;
+ color:  palevioletred ;
+}
+
+input[type="radio"]:disabled + label{
+  border: 2.5px solid azure;
+  text-decoration: line-through;
+  font-weight: lighter;
+  background-color: azure;
+  color:  black ;
+ }
+
+ /* Modal -> sizechart  */
+
+
+ .mymodal {
+  position: absolute;
+  top: 40vh;
+  left: 50vw;
+  width: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+  background:transparent ;
+  overflow: auto;
+  border-radius: 4px;
+  outline: none;
+  padding: 5%;
+  opacity: 100;
+}
+
+.myoverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(204, 192, 192, 0.75);
+}
+
+.ReactModal__Overlay {
+  opacity: 0;
+  transition: opacity 500ms ease-in-out;
+}
+
+.ReactModal__Overlay--after-open {
+  opacity: 1;
+}
+
+.ReactModal__Overlay--before-close {
+  opacity: 0;
+}
+
+
+.close {
+  color: black;
+  transform: scale(1.5)
+}
+.modal-body {
+  font-weight: bold;
+  z-index: 100;
+  background: whitesmoke;
+}
+

@@ -3,6 +3,15 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import * as AWS from 'aws-sdk';
+
+
+AWS.config.update({
+  region: 'us-east-2',
+  secretAccessKey:'H4ZMQj5s5uqda+D2ZmruKZYpoXb8w6g1YbBAijst', //'1HSZ4B8cIueFXW1Zn7zK/vbSv1lcxm8ED7gKjTSl',
+  accessKeyId: 'AKIAUN7TPEEHPMRNU7LG'
+  //'AKIAUN7TPEEHKAUH2F2E'
+});
 
 ReactDOM.render(
   <React.StrictMode>
