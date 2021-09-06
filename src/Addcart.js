@@ -4,10 +4,8 @@ import { Container , Navbar } from 'react-bootstrap';
 //import * as AWS from 'aws-sdk'
 import axios from 'axios';
 import Images from './Images';
-import Modal from "react-modal"
 import Size_Chart from './Size_Chart';
 
-Modal.setAppElement("#root");
 class Addcart extends Component {
   constructor(props) {
     super(props)

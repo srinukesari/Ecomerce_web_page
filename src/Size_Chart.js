@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import Modal from "react-modal"
 import './App.css'
 
 class Size_Chart extends Component {
