@@ -2,7 +2,7 @@ import axios from 'axios';
 import React, { Component } from 'react'
 import { Container } from 'react-bootstrap';
 import './App.css';
-import img4 from "./pics/img4.jpg";
+import img3 from "./pics/images3.jpg";
 
 class Billing extends Component {
     constructor(props) {
@@ -19,7 +19,8 @@ class Billing extends Component {
         cost:0,
         discount:0,
         dis_amount:0,
-        delhivery:""
+        delhivery:"",
+        convience_fee:99
       }
     }
     
@@ -112,17 +113,18 @@ class Billing extends Component {
         cost:0,
         discount:0,
         dis_amount:0,
-        delhivery:""
+        delhivery:"",
+        convience_fee:0
       })
     }
   render() {
     return (
       <Container>
-        <h4 id= "mycart_title">My Cart</h4>
+        <h2 id= "mycart_title">My Cart</h2>
         {this.state.cost?
         <div className ="cart_items">
           <div className = "cart_img">
-            <img src = {img4} alt = "puma shoes img" width = {160} height ={200} />
+            <img src = {img3} alt = "puma shoes img" width = {150} height ={100} />
           </div>
           <div className = "cart_item_details">
             <em id="cart_item_brand">{this.state.brand}</em>
@@ -153,8 +155,8 @@ class Billing extends Component {
             <br></br>
             <em id="left_bill">Convenience Fee</em>
             {this.state.delhivery?
-            <em id="right_bill"><s>Rs. 99 </s> <em id="free_tag"> {this.state.delhivery}</em></em>:
-            <em id="right_bill">Rs.99</em>
+            <em id="right_bill"><s>Rs. {this.state.convience_fee}</s> <em id="free_tag"> {this.state.delhivery}</em></em>:
+            <em id="right_bill">Rs. {this.state.convience_fee}</em>
             }
             <br></br>
             <br></br>

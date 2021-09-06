@@ -1,26 +1,58 @@
 .App {
   text-align: center;
 }
-.navbar{
+.nav_gocart{
   border-bottom:2px solid red;
   border-radius: 0;
   padding: 2rem;
-  font-size: larger;
+  height: 7rem;
+  font-size: large;
+}
+.title{
+  float: left;
+}
+.heading{
+  float: left;
+  margin-left:8rem ;
 }
 #title_color{
   color:rgb(190, 59, 59);
 }
-img {
-  max-width: 100%;
+
+.home_button{
+  border: none;
+  font-size: medium;
+  font-weight: bold;
+  padding: 0rem 1rem;
+  background-color: transparent;
 }
+.home_button:hover{
+  border: none;
+  background-color: transparent;
+  color: rgb(190, 59, 59);
+}
+
+.search_bar{
+  margin:0rem 8rem;
+  width: 300px;
+  font-size: medium;
+  border: 1px solid lightskyblue;
+}
+.search_bar:hover{
+  margin:0rem 8rem;
+  width: 300px;
+  font-size: medium;
+  border: 1px solid red;
+}
+
 #cart{
   font-family: Arial, Helvetica, sans-serif;
 }
 #left{
   padding: 3rem;
   overflow: auto;
-  height: 580px;
-  min-height: 200px;
+  height: 500px;
+  min-height: 100px;
 }
 #right{
   padding:2rem;
@@ -100,14 +132,6 @@ img {
   padding-bottom: 2rem;
 }
 
-#chart{
-  padding-bottom: 2rem;
-  font-size: 1.4rem;
-  font-weight: bold;
-  background-color: transparent;
-  border: none;
-  color:rgb(190, 59, 59) ;
-}
 
 #err_msg{
   font-size: 1.5rem;
@@ -140,7 +164,7 @@ img {
 
 /* billing page */
 #mycart_title{
-  padding-left: 1rem;
+  padding: 2rem;
 }
 .empty_cart{
   float: left;
@@ -154,6 +178,7 @@ img {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   padding: 1rem 2rem;
   width: 65rem;
+  max-width: 100%;
   margin-top:3rem;
 }
 .cart_img{
@@ -223,7 +248,7 @@ img {
 }
 .bill{
   margin:3rem 4rem;
-  width:400px;
+  width:380px;
   height: auto;
   float: left;
   max-width: 100%;
@@ -317,53 +342,15 @@ input[type="radio"]:disabled + label{
  }
 
  /* Modal -> sizechart  */
-
-
- .mymodal {
-  position: absolute;
-  top: 40vh;
-  left: 50vw;
-  width: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 100;
-  background:transparent ;
-  overflow: auto;
-  border-radius: 4px;
-  outline: none;
-  padding: 5%;
-  opacity: 100;
+.size_chart{
+  float: right;
 }
 
-.myoverlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(204, 192, 192, 0.75);
-}
-
-.ReactModal__Overlay {
-  opacity: 0;
-  transition: opacity 500ms ease-in-out;
-}
-
-.ReactModal__Overlay--after-open {
-  opacity: 1;
-}
-
-.ReactModal__Overlay--before-close {
-  opacity: 0;
-}
-
-
-.close {
-  color: black;
-  transform: scale(1.5)
-}
-.modal-body {
+.size_chart_button{
+  padding-bottom: 2rem;
+  font-size: 1.4rem;
   font-weight: bold;
-  z-index: 100;
-  background: whitesmoke;
+  background-color: transparent;
+  border: none;
+  color:rgb(190, 59, 59) ;
 }
-

@@ -3,13 +3,9 @@ import React, { Component } from 'react';
 import { Container , Navbar } from 'react-bootstrap';
 //import * as AWS from 'aws-sdk'
 import axios from 'axios';
-//import puma from "./pics/pumashoes.jpg";
-//import img1 from "./pics/img1.jpg";
-import img2 from "./pics/img2.jpg";
-import img3 from "./pics/img3.jpg";
-import img4 from "./pics/img4.jpg";
-import img5 from "./pics/img5.jpg";
+import Images from './Images';
 import Modal from "react-modal"
+import Size_Chart from './Size_Chart';
 
 Modal.setAppElement("#root");
 class Addcart extends Component {
@@ -24,7 +20,6 @@ class Addcart extends Component {
        cost:'',
        discount:'',
        dis_cost:'',
-       show_sizechart:false,
        addcart:true,
        selected_size : "",
        size_msg : "",
@@ -82,13 +77,6 @@ class Addcart extends Component {
       console.log("nothing selected")
     }
 
-  }
-  show_sizechart = (event) =>{
-    console.log("coming here")
-    this.setState({
-      show_sizechart:true
-    });
-    console.log(this.state.show_sizechart)
   }
 
   size_input = (event) =>{
@@ -178,10 +166,7 @@ class Addcart extends Component {
       <Container id = "cart">
         <div class="row">
           <div class="col-md-6" id = "left">
-              <img src = {img5} alt = "puma shoes img" width = {250} />
-              <img src = {img4} alt = "puma shoes img" width = {250} />
-              <img src = {img2} alt = "puma shoes img" width = {250} />
-              <img src = {img3} alt = "puma shoes img" width = {250} />
+            < Images />
           </div>
           <div class="col-md-5" id = "right">
             <em id = "brand" >{this.state.brand}</em>
@@ -204,8 +189,7 @@ class Addcart extends Component {
             <br></br>
             <br></br>
             <br></br>
-            <em id="size"> SELECT SIZE </em>
-            <button id = 'chart' onClick ={this.show_sizechart}>SIZE CHART</button>
+            <em id="size"> SELECT SIZE  <Size_Chart /> </em>
             <br></br>
             <em id = "err_msg" > {this.state.size_msg}</em>
             <div class='section'>
@@ -235,52 +219,6 @@ class Addcart extends Component {
               <button onClick = {this.addtocart} class="addcart"> <i class="fa fa-shopping-cart" aria-hidden="true"></i> ADD TO CART</button>:
               <button onClick = {this.cart} class = "addcart">GO TO CART  <i class="fa fa-arrow-right" aria-hidden="true"></i> </button>
             }
-
-
-
-
-            <Modal isOpen = {this.state.show_sizechart} className = 'mymodal' overlayClassName="myoverlay" >
-                <div class="modal-body">
-                    <button onClick = {() => { this.setState({ show_sizechart : false})}} class="close">&times;</button>
-                    <h4>SIZE CHART (in Inches)</h4>
-                    <table class="table table-striped">
-                      <thead>
-                        <tr>
-                          <th>Size</th>
-                          <th>Chest(in)</th>    
-                          <th>Front Length(in)</th>
-                          <th>Across Shoulder(in)</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td>Small</td>
-                          <td>38.0</td>
-                          <td>27.5</td>
-                          <td>16.3</td>
-                        </tr>
-                        <tr>
-                          <td>Medium</td>
-                          <td>40.0</td>
-                          <td>28.0</td>
-                          <td>17.0</td>
-                        </tr>
-                        <tr>
-                          <td>Large</td>
-                          <td>42.0</td>
-                          <td>28.5</td>
-                          <td>17.8</td>
-                        </tr>
-                        <tr>
-                          <td>Extra - Large</td>
-                          <td>44.5</td>
-                          <td>29.0</td>
-                          <td>18.6</td>
-                        </tr>
-                      </tbody>
-                    </table>
-                </div>
-            </Modal>
           </div>
         </div>
       </Container>
