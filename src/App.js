@@ -46,7 +46,7 @@ class App extends Component {
 
 
             <button className = "home_button">
-            <i class="fa fa-user" aria-hidden="true"></i>Account</button>
+            <i class="fa fa-user" aria-hidden="true"></i>Profile</button>
             
           </div>
         </div>
