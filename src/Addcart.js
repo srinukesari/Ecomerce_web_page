@@ -33,7 +33,7 @@ class Addcart extends Component {
   }
 
   componentDidMount(){
-    axios.get('https://notslre7ab.execute-api.us-east-2.amazonaws.com/api_list2/list_item')
+    axios.get('https://xxysp0vbbi.execute-api.us-east-2.amazonaws.com/api_js/cart_list')
         .then(response => { 
             const cart = response.data.Items[0]
             console.log(response.data.Items[0])
@@ -53,7 +53,7 @@ class Addcart extends Component {
       });
       const cart_item ={
             "user_id": this.props.user,
-            "item_list": [
+            "item_list":[
               {
                 "size": this.state.selected_size,
                 "item_id": this.state.item_id,
@@ -63,7 +63,7 @@ class Addcart extends Component {
         }
         console.log(cart_item)
 
-        await axios.post("https://notslre7ab.execute-api.us-east-2.amazonaws.com/api_list2/cart_items_put",cart_item)
+        await axios.post("https://xxysp0vbbi.execute-api.us-east-2.amazonaws.com/api_js/add_to_cart_",cart_item)
         .then(response =>{
             console.log(response.data);
         })

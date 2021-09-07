@@ -28,7 +28,7 @@ class Billing extends Component {
         const data = {
           "user_id":this.props.user
         }
-        await axios.post('https://notslre7ab.execute-api.us-east-2.amazonaws.com/api_list2/cart_item_get',data)
+        await axios.post('https://xxysp0vbbi.execute-api.us-east-2.amazonaws.com/api_js/get_usercart_by_userid',data)
         .then(response =>{
                 console.log("checking")
                 console.log(this.props.user)
@@ -49,7 +49,7 @@ class Billing extends Component {
 
     item_bill = async(id) =>{
       console.log(id);
-      await axios.post("https://notslre7ab.execute-api.us-east-2.amazonaws.com/api_list2/list_item_detail",{"item_id":id})
+      await axios.post("https://xxysp0vbbi.execute-api.us-east-2.amazonaws.com/api_js/cart_list_item",{"item_id":id})
       .then(response =>{
             const item_detail = response.data.Item
             console.log(item_detail)
@@ -97,7 +97,7 @@ class Billing extends Component {
       }
     }
     remove_item = async() =>{
-      await axios.post("https://notslre7ab.execute-api.us-east-2.amazonaws.com/api_list2/remove_cart_item",
+      await axios.post("https://xxysp0vbbi.execute-api.us-east-2.amazonaws.com/api_js/user_cart_delete",
       {"user_id":this.props.user}).
       then(response => {
         console.log(response.data);
