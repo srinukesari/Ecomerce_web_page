@@ -32,6 +32,7 @@
   color: rgb(190, 59, 59);
 }
 
+
 .search_bar{
   margin:0rem 8rem;
   width: 300px;
@@ -163,21 +164,30 @@
 }
 
 /* billing page */
-#mycart_title{
-  padding: 2rem;
+#my_cart_title{
+  font-size: x-large;
+  font-weight: bolder;
+  margin: 2rem 20rem 0rem 2rem;
 }
-.empty_cart{
+#total_billing_amount{
+  font-size: x-large;
+  font-weight: bolder;
+  color: tomato;
+  margin: 2rem 2rem 0rem 15rem;;
+}
+
+#cart_empty{
+  font-size: xx-large;
+  font-weight: bolder;
+  color: tomato;
+  margin: 10rem 0rem 0rem 15rem;
   float: left;
-  padding: 1rem 2rem;
-  font-family: Arial, Helvetica, sans-serif;
-  width: 65rem;
-  margin-top:3rem;
 }
+
 .cart_items{
   float: left;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   padding: 1rem 2rem;
-  width: 65rem;
   max-width: 100%;
   margin-top:3rem;
 }
@@ -247,7 +257,7 @@
   border: 2px solid rgb(190, 59, 59);
 }
 .bill{
-  margin:3rem 4rem;
+  margin:3rem 1rem;
   width:380px;
   height: auto;
   float: left;
@@ -368,4 +378,11 @@ input[type="radio"]:disabled + label{
   background-color: transparent;
   transform: scale(1.5);
   float: right;
+}
+
+#stock_msg{
+  margin:2rem;
+  padding: 2rem;
+  font-size: large;
+  font-weight: bold;
 }

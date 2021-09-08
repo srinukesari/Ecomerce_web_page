@@ -45,8 +45,8 @@ class App extends Component {
               <i class="fa fa-home" aria-hidden="true"></i>HOME</button>
 
 
-            <button className = "home_button">
-            <i class="fa fa-user" aria-hidden="true"></i>Profile</button>
+            <button onClick = {this.gotocart } className = "home_button">
+            <i class="fa fa-shopping-cart" aria-hidden="true"></i>Cart</button>
             
           </div>
         </div>
