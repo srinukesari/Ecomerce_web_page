@@ -155,16 +155,24 @@ class Addcart extends Component {
   render() {
     return (
       <div>
-        <button  onClick = {this.previous_item} className="prev_button">
-          <i class="fa fa-angle-left" aria-hidden="true"></i>
-        </button>
-        <button onClick = {this.next_item} className="next_button">
-          <i class="fa fa-angle-right" aria-hidden="true"></i>
-        </button>
-      <Container id = "cart">
-        <div class="row">
-          <div class="col-md-6" id = "left">
-            < Images />
+        <Container fluid>
+        <div class="row" id = "prev_next">
+          <div class="col-md-6" >
+            <button  onClick = {this.previous_item} className="prev_button">
+              <i class="fa fa-angle-left" aria-hidden="true"></i>
+            </button>
+          </div>
+          <div class="col-md-6">
+            <button onClick = {this.next_item} className="next_button">
+              <i class="fa fa-angle-right" aria-hidden="true"></i>
+            </button>
+          </div>
+        </div>
+        </Container>
+        <Container>
+        <div class="row" id = "cart">
+          <div class="col-md-5" id = "left">
+            < Images item_id = {this.state.item_id}/>
           </div>
           <div class="col-md-5" id = "right">
             <em id = "brand" >{this.state.brand}</em>
@@ -174,10 +182,10 @@ class Addcart extends Component {
             <br></br>
 
             <em id = "rating">Rating : {this.state.rating} 
-            <img src="https://img.icons8.com/fluency/18/000000/star.png" alt = "rating star"/></em>
+            <i class="fa fa-star"  id = "star" aria-hidden="true"></i>
+            </em>
 
             <div id= "underline"></div>
-            <br></br>
             <br></br>
             <em id = "dis_cost"> Rs.{this.state.dis_cost}</em>
             <em id = "cost">Rs. {this.state.cost}</em>
@@ -187,7 +195,7 @@ class Addcart extends Component {
             <br></br>
             <br></br>
             <br></br>
-            <em id="size"> SELECT SIZE  <Size_Chart /> </em>
+            <em id="size"> SELECT SIZE<Size_Chart /> </em>
             <br></br>
             <em id = "err_msg" > {this.state.size_msg}</em>
             <div class='section'>
@@ -214,9 +222,13 @@ class Addcart extends Component {
                 </Container>
             </div>
             { this.state.addcart ?
-              <button onClick = {this.addtocart} class="addcart"> <i class="fa fa-shopping-cart" aria-hidden="true"></i> ADD TO CART</button>:
-              <button onClick = {this.cart} class = "addcart">GO TO CART  <i class="fa fa-arrow-right" aria-hidden="true"></i> </button>
+              <button onClick = {this.addtocart} class="addcart">
+                 <i class="fa fa-shopping-cart" aria-hidden="true"></i> ADD TO CART</button>:
+              <button onClick = {this.cart} class = "addcart">GO TO CART 
+               <i class="fa fa-arrow-right" aria-hidden="true"></i> </button>
             }
+            <button class="wishlist">
+            <i class="fa fa-heart-o" aria-hidden="true"></i>WISHLIST</button>
           </div>
         </div>
       </Container>

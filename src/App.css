@@ -1,11 +1,11 @@
-.App {
-  text-align: center;
+body{
+  font-family: Whitney,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
 }
 .nav_gocart{
-  
   border-radius: 0;
   padding: 2rem;
   height: 7rem;
+  width: 132rem;
   font-size: large;
 }
 .title{
@@ -13,65 +13,73 @@
 }
 .heading{
   float: right;
-  margin-left:8rem ;
+  margin-left:3rem;
 }
 #title_color{
-  color:rgb(190, 59, 59);
+  color:#ff527b;
 }
 
 .home_button{
   border: none;
   font-size: medium;
   font-weight: bold;
-  padding: 0rem 1rem;
+  color:#282c3f;
+  padding: 1rem 1rem;
   background-color: transparent;
 }
 .home_button:hover{
   border: none;
   background-color: transparent;
-  color: rgb(190, 59, 59);
+  border-bottom:2px solid #f2c210;
 }
 
 
 .search_bar{
   margin:0rem 8rem;
   width: 300px;
+  color: #696e79;
+  background-color: #f5f5f6;
   font-size: medium;
-  border: 1px solid lightskyblue;
+  border:1px solid #f5f5f6;
 }
 .search_bar:hover{
   margin:0rem 8rem;
+  border: 1px solid internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
   width: 300px;
   font-size: medium;
-  border: 1px solid red;
 }
 
 #cart{
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Whitney,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
 }
 #left{
-  padding: 3rem;
+  padding: 2rem;
   overflow: auto;
   height: 600px;
+  margin:0rem 3rem;
   min-height: 100px;
 }
 #right{
   padding:2rem;
+  margin-left: 3rem;
   padding-top:5rem;
+}
+#prev_next{
+  width: 130rem;
+  min-width: 100%;
 }
 .prev_button{
   border: None;
-  padding: 0rem 3.5rem;
+  padding: 0rem 2rem;
   background-color: transparent;
-  float: left;
   font-size: xx-large;
   font-weight: bolder;
 }
 .next_button{
   border: None;
-  padding: 0rem 3.5rem;
-  background-color: transparent;
+  padding: 0rem 2rem;
   float: right;
+  background-color: transparent;
   font-size: xx-large;
   font-weight: bolder;
 }
@@ -84,21 +92,26 @@
 }
 
 #brand{
-  font-size: 2.5rem;
-  font-weight: bolder;
+  font-size: 24px;
+  color: #282c3f;
+  font-weight: 500;
 }
 #desc{
   font-size: 2.2rem;
-  font-weight: lighter;
+  color:#535665;
+  font-weight: 400;
 }
 #rating{
   font-size: 1.5rem;
   font-weight: bolder; 
 }
-
+#star{
+  padding: 0rem .5rem;
+  color: #ff527b;
+}
 #underline{
   margin-top: 1rem;
-  border-top: 1px solid burlywood;
+  border-top: 1px solid #d4d5d9;
 }
 
 #dis_cost{
@@ -117,13 +130,13 @@
 #discount{
   font-size: 2rem;
   font-weight: bold;
-  color: palevioletred;
+  color: #ff905a;
 }
 
 #taxes{
   font-size: 1.5rem;
   font-weight: bold;
-  color:rgb(19, 108, 143)
+  color:#03a685;
 }
 
 #size{
@@ -137,7 +150,7 @@
 #err_msg{
   font-size: 1.5rem;
   font-weight: normal;
-  color:red;
+  color:#f16565;
   padding-top: 2rem;
   padding-left: 2rem;
 }
@@ -145,24 +158,48 @@
   font-size: 1.7rem;
   margin-top: 2rem;
   font-weight: bolder;
-  padding:1rem 2rem;
-  background-color: transparent;
-  border: 2px solid rgb(190, 59, 59) ;
+  padding:1rem 4rem;
   border-radius: 3%;
-  color:rgb(190, 59, 59) ;
+  background-color: #ff527b;
+  border: 2px solid #ff527b ;
+  color:whitesmoke ;
+  
 }
 
 .addcart:hover{
   font-size: 1.7rem;
   margin-top: 2rem;
   font-weight: bolder;
-  padding:1rem 2rem;
+  padding:1rem 4rem;
   border-radius: 3%;
-  background-color: rgb(190, 59, 59);
-  border: 1px solid rgb(190, 59, 59) ;
-  color:whitesmoke ;
+  background-color: transparent;
+  border: 2px solid #ff527b ;
+  color:#ff527b ;
+  
 }
 
+.wishlist{
+  font-size: 1.7rem;
+  margin-top: 2rem;
+  margin-left: 4rem;
+  font-weight: bolder;
+  padding:1rem 4rem;
+  border-radius: 3%;
+  background-color: transparent;
+  border: 1px solid currentColor;
+}
+.wishlist:hover{
+  font-size: 1.7rem;
+  margin-top: 2rem;
+  font-weight: bolder;
+  padding:1rem 4rem;
+  border-radius: 3%;
+  background-color:transparent;
+  color: #ff527b;
+  border: 1px solid currentColor;
+  
+  
+}
 /* billing page */
 #my_cart_title{
   font-size: x-large;
@@ -170,9 +207,9 @@
   margin: 2rem 20rem 0rem 2rem;
 }
 #total_billing_amount{
-  font-size: x-large;
-  font-weight: bolder;
-  color: tomato;
+  font-size: large;
+  font-weight: bold;
+  color: #ff527b;
   margin: 2rem 2rem 0rem 15rem;;
 }
 
@@ -188,7 +225,7 @@
   float: left;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   padding: 1rem 2rem;
-  max-width: 100%;
+  min-width: 100%;
   margin-top:3rem;
 }
 .cart_img{
@@ -241,20 +278,21 @@
 .remove_button{
   float: right;
   padding: .5rem 4rem;
-  background-color: whitesmoke;
-  color :rgb(190, 59, 59);
-  font-size: medium;
-  font-weight: bold;
-  border: 2px solid rgb(190, 59, 59);
+  font-size: small;
+  font-weight: 700;
+  border: none;
+  background-color: transparent;
+  color:#ff527b ;
+  border-left:1px solid #bfc0c6;
 }
-.remove_button:hover{
+.moveto_button{
   float: right;
   padding: .5rem 4rem;
-  background-color: rgb(190, 59, 59);
-  color :whitesmoke;
-  font-size: medium;
-  font-weight: bold;
-  border: 2px solid rgb(190, 59, 59);
+  font-size: small;
+  font-weight: 600;
+  border: none;
+  background-color: transparent;
+  color:currentColor ;
 }
 .bill{
   margin:3rem 1rem;
@@ -268,6 +306,8 @@
 
 #left_bill{
   font-size: medium;
+  font-family: Whitney,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+
   font-weight: unset;
 
 }
@@ -295,10 +335,10 @@
   max-width: 100%;
   padding:0.5rem 0rem;
   font-size: larger;
-  color:whitesmoke;
   font-weight: bold;
-  background-color: tomato;
-  border: 2px solid tomato;
+  background-color: #ff527b;
+  border: 2px solid #ff527b ;
+  color:whitesmoke ;
 }
 
 .check_out_button:hover{
@@ -306,10 +346,10 @@
   max-width: 100%;
   padding:0.5rem 0rem;
   font-size: larger;
-  color:tomato;
   font-weight: bold;
-  background-color: whitesmoke;
-  border: 2px solid tomato;
+  background-color: transparent;
+  border: 2px solid #ff527b ;
+  color:#ff527b ;
 }
 /* for radio buttons*/
 
@@ -318,19 +358,16 @@
 }
 
 .small , .medium , .large, .xlarge{
-   border: 2px solid lightblue;
-   padding : 1rem 4rem;
-   font-weight: bolder;
+   border: 1px solid #bfc0c6;
+   margin: 0rem 1rem;
+   padding : 1.5rem 2.1rem;
+   font-weight: bold;
    font-size: medium;
    cursor: pointer;
 }
 
-label.small{
-   border-radius: 100px 0px 0px 100px;
-}
-
-label.xlarge{
-   border-radius: 0px 100px 100px 0px;
+label{
+   border-radius: 120px;
 }
 
 
@@ -362,10 +399,11 @@ input[type="radio"]:disabled + label{
   font-weight: bold;
   background-color: transparent;
   border: none;
-  color:rgb(190, 59, 59) ;
+  color:#ff3e6c ;
 }
 
 #size_head{
+  color: #ff3e6c;
   float: left;
 }
 

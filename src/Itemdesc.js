@@ -3,6 +3,7 @@ import axios from "axios"
 import img3 from "./pics/images3.jpg";
 import { Container,Button } from 'react-bootstrap';
 import Modal from 'react-modal';
+import Itempic from './Itempic';
 
 Modal.setAppElement('#root');
 
@@ -147,7 +148,7 @@ class Itemdesc extends Component {
       { this.state.item_exist ?
         <div className = "cart_items">
           <div className = "cart_img">
-            <img src = {img3} alt = "puma shoes img" width = {150} height ={100} />
+            <Itempic item_id = {this.state.item_id} />
           </div>
           <div className = "cart_item_details">
             <em id="cart_item_brand">{this.state.brand}</em>
@@ -161,7 +162,8 @@ class Itemdesc extends Component {
             <button className="quantity_button" onClick = {this.increment} >+</button>
             <br></br>
             
-            <button className="remove_button" onClick = {this.remove_item}>Remove</button>
+            <button className="remove_button" onClick = {this.remove_item}>REMOVE</button>
+            <button className="moveto_button" onClick = {this.remove_item}>MOVE TO WISHLIST</button>
 
 
             <Modal
