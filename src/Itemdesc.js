@@ -120,6 +120,7 @@ class Itemdesc extends Component {
     }
 
     decrement = () =>{
+      this.props.total_item_count(-1);
       if(this.state.quantity - 1 > 0){
         this.props.cost_prop(this.state.single_item_cost*-1 ,this.state.single_item_discount*-1);
         this.setState({
@@ -131,7 +132,6 @@ class Itemdesc extends Component {
         });
       }
       else{
-        this.props.total_item_count(-1);
         this.remove_item();
       }
     }
