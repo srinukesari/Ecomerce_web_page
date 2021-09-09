@@ -9,6 +9,7 @@ class Billing extends Component {
       super(props)
     
       this.state = {
+        total_items_count:0,
         delhivery:"",
         convience_fee:99,
         total_items_list:[],
@@ -28,7 +29,8 @@ class Billing extends Component {
                 console.log(response.data.Item["item_list"].length)
                 if (response.data.Item["item_list"].length) {
                 this.setState({
-                  total_items_list: response.data.Item['item_list']
+                  total_items_list: response.data.Item['item_list'],
+                  total_items_count : response.data.Item["item_list"].length,
                 });
                 console.log("check here")
                 console.log(this.state.total_items_list);
@@ -65,48 +67,56 @@ class Billing extends Component {
           cart_full:false
         })
       }
+    }
 
+    set_item_count = (count) =>{
+      this.setState({
+        total_items_count : this.state.total_items_count + count
+      })
     }
   render() {
       const items = []
       
       this.state.total_items_list.forEach((element) => {
         items.push(< Itemdesc key = {element['item_id']+element['size']} 
-        bag_item = {element} user = {this.props.user} cost_prop = {this.total_cost_balance}  />)
+        bag_item = {element} user = {this.props.user} cost_prop = {this.total_cost_balance}  
+        total_item_count = {this.set_item_count} />)
       });
 
     return (
       <Container>
-        <em id = "my_cart_title">My Cart </em>
-        <em id = "total_billing_amount">Total: Rs.{this.state.total_mrp - this.state.total_discount}</em>
-        <div className = "row" id = "check">
+          <br></br>
+          <br></br>
+          <em id = "my_cart_title">My Shopping Cart ( {this.state.total_items_count} Items ) </em>
+          <em id = "total_billing_amount">Total: <i class="fa fa-inr" aria-hidden="true"></i> {this.state.total_mrp - this.state.total_discount}</em>
+        <div className = "row">
         {this.state.cart_full ?
-          <div className = "col-md-8" id ='left_bill'>
+          <div className = "col-md-*" id ='left_bill'>
             {items}
           </div>:
-          <div className = "col-md-8">
-            <em id ="cart_empty" >Cart is Empty</em>
+          <div className = "col-md-*" id ="cart_empty" >
+            <em>Cart is Empty</em>
           </div>
         }
-          <div className = "col-md-4">
+          <div className = "col-md-*">
           <div className = "bill">
             <h3>Price Details</h3>
             <em id="left_bill" >Total MRP</em>
-            <em id= "right_bill">Rs. {this.state.total_mrp}</em>
+            <em id= "right_bill"><i class="fa fa-inr" aria-hidden="true"></i> {this.state.total_mrp}</em>
             <br></br>
             <em id="left_bill">Discount on MRP</em>
-            <em id="dis_amount">-Rs.{this.state.total_discount}</em>
+            <em id="dis_amount">-<i class="fa fa-inr" aria-hidden="true"></i> {this.state.total_discount}</em>
             <br></br>
             <em id="left_bill">Convenience Fee</em>
             {this.state.delhivery?
-            <em id="right_bill"><s>Rs. {this.state.convience_fee}</s> <em id="free_tag"> {this.state.delhivery}</em></em>:
-            <em id="right_bill">Rs. {this.state.convience_fee}</em>
+            <em id="right_bill"><s><i class="fa fa-inr" aria-hidden="true"></i> {this.state.convience_fee}</s> <em id="free_tag"> {this.state.delhivery}</em></em>:
+            <em id="right_bill"><i class="fa fa-inr" aria-hidden="true"></i> {this.state.convience_fee}</em>
             }
             <br></br>
             <br></br>
             <br></br>
             <em id="left_bill"><strong>Total Amount</strong></em>
-            <em id="right_bill"><strong>Rs.{this.state.total_mrp - this.state.total_discount}</strong></em>
+            <em id="right_bill"><strong><i class="fa fa-inr" aria-hidden="true"></i> {this.state.total_mrp - this.state.total_discount}</strong></em>
             <br></br>
             <br></br>
             <button class= "check_out_button">CHECK OUT</button>

@@ -4,10 +4,12 @@ body{
 .nav_gocart{
   border-radius: 0;
   padding: 2rem;
-  height: 7rem;
-  width: 132rem;
+  height: 5rem;
+  width: 93vw;
   font-size: large;
 }
+
+
 .title{
   float: left;
 }
@@ -21,10 +23,12 @@ body{
 
 .home_button{
   border: none;
+  overflow: hidden;
   font-size: medium;
   font-weight: bold;
   color:#282c3f;
-  padding: 1rem 1rem;
+  padding: .5rem 1rem;
+  overflow:hidden;
   background-color: transparent;
 }
 .home_button:hover{
@@ -33,7 +37,20 @@ body{
   border-bottom:2px solid #f2c210;
 }
 
-
+.home_button_fake{
+  border: none;
+  overflow: hidden;
+  font-size: medium;
+  font-weight: bold;
+  color:#282c3f;
+  padding: .5rem 1rem;
+  background-color: transparent;
+}
+.home_button_fake:hover{
+  border: none;
+  background-color: transparent;
+  border-bottom:2px solid #f2c210;
+}
 .search_bar{
   margin:0rem 8rem;
   width: 300px;
@@ -48,14 +65,26 @@ body{
   width: 300px;
   font-size: medium;
 }
-
+@media screen and (max-width: 1260px) {
+  .search_bar {
+    display: none;
+  }
+}
+@media screen and (max-width: 800px) {
+  .home_button_fake {
+    display: none;
+  }
+}
 #cart{
   font-family: Whitney,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+  height: 80vh;
 }
 #left{
   padding: 2rem;
-  overflow: auto;
-  height: 600px;
+  overflow: hidden;
+  height: 580px;
+  width: 500px;
+  min-width: 20%;
   margin:0rem 3rem;
   min-height: 100px;
 }
@@ -65,12 +94,19 @@ body{
   padding-top:5rem;
 }
 #prev_next{
-  width: 130rem;
-  min-width: 100%;
+  width:93vw;
+  overflow-x: hidden;
+}
+.prev_div{
+  width: 50%;
+}
+.next_div{
+  width: 50%;
 }
 .prev_button{
   border: None;
   padding: 0rem 2rem;
+  float: left;
   background-color: transparent;
   font-size: xx-large;
   font-weight: bolder;
@@ -196,21 +232,37 @@ body{
   border-radius: 3%;
   background-color:transparent;
   color: #ff527b;
-  border: 1px solid currentColor;
-  
-  
+  border: 1px solid currentColor; 
+}
+
+@media screen and (max-width: 550px) {
+  .addcart{
+    width: 70vw;
+  }
+  .wishlist{
+    width: 70vw;
+    margin-left: 0rem;
+  }
 }
 /* billing page */
+.my_shopping_cart{
+  border: 1ps solid red;
+}
 #my_cart_title{
-  font-size: x-large;
-  font-weight: bolder;
-  margin: 2rem 20rem 0rem 2rem;
+  font-size: large;
+  font-weight: bold;
+  margin: 0rem;
 }
 #total_billing_amount{
   font-size: large;
   font-weight: bold;
   color: #ff527b;
-  margin: 2rem 2rem 0rem 15rem;;
+  margin: 2rem 2rem 0rem 25rem;
+}
+@media screen and (max-width: 770px) {
+  #total_billing_amount{
+    margin: 2rem 2rem 0rem 2rem;
+  }
 }
 
 #cart_empty{
@@ -218,6 +270,7 @@ body{
   font-weight: bolder;
   color: tomato;
   margin: 10rem 0rem 0rem 15rem;
+  padding-right: 15vw;
   float: left;
 }
 
@@ -225,9 +278,11 @@ body{
   float: left;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   padding: 1rem 2rem;
-  min-width: 100%;
+  min-width: 70%;
+  overflow: hidden;
   margin-top:3rem;
 }
+
 .cart_img{
   float: left;
   width:20rem;
@@ -236,6 +291,13 @@ body{
   float: left;
   width: 41rem;
 }
+@media screen and (max-width: 600px) {
+  .cart_item_details {
+    width: 35rem;
+  }
+}
+
+
 #cart_item_brand{
   font-size: x-large;
   font-weight: bold;
@@ -283,16 +345,19 @@ body{
   border: none;
   background-color: transparent;
   color:#ff527b ;
-  border-left:1px solid #bfc0c6;
 }
 .moveto_button{
-  float: right;
+  float: left;
   padding: .5rem 4rem;
   font-size: small;
   font-weight: 600;
   border: none;
   background-color: transparent;
   color:currentColor ;
+}
+
+.moveto_button:hover{
+  color: #ff527b ;
 }
 .bill{
   margin:3rem 1rem;
@@ -307,7 +372,6 @@ body{
 #left_bill{
   font-size: medium;
   font-family: Whitney,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
-
   font-weight: unset;
 
 }
@@ -315,7 +379,7 @@ body{
   right: 0;
   float:right;
   font-size: medium;
-  font-weight: lighter;
+  font-weight: normal;
   padding-right: 2rem;
 }
 #dis_amount{
@@ -376,8 +440,12 @@ label{
 }
 
 input[type="radio"]:checked + label{
- border: 2.5px solid palevioletred;
+ border: 1.5px solid palevioletred;
  color:  palevioletred ;
+}
+input[type="radio"]:hover + label{
+  border: 1px solid palevioletred;
+  color:  palevioletred ;
 }
 
 input[type="radio"]:disabled + label{

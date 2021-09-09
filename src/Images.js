@@ -21,7 +21,7 @@ class Images extends Component {
   render() {
     if (this.props.item_id == "4536"){ 
     return (
-        <Carousel>
+        <Carousel className="scroll">
           <div>
               <img src={img1} alt = "image not found"/>
           </div>

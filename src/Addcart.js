@@ -156,25 +156,27 @@ class Addcart extends Component {
     return (
       <div>
         <Container fluid>
+        <center>
         <div class="row" id = "prev_next">
-          <div class="col-md-6" >
+          <div class="prev_div" >
             <button  onClick = {this.previous_item} className="prev_button">
               <i class="fa fa-angle-left" aria-hidden="true"></i>
             </button>
           </div>
-          <div class="col-md-6">
+          <div class="next_div">
             <button onClick = {this.next_item} className="next_button">
               <i class="fa fa-angle-right" aria-hidden="true"></i>
             </button>
           </div>
         </div>
+        </center>
         </Container>
         <Container>
         <div class="row" id = "cart">
-          <div class="col-md-5" id = "left">
+          <div class="col-md-*" id = "left">
             < Images item_id = {this.state.item_id}/>
           </div>
-          <div class="col-md-5" id = "right">
+          <div class="col-md-*" id = "right">
             <em id = "brand" >{this.state.brand}</em>
             <br></br>
             <em id = "desc">{this.state.desc}</em>
@@ -187,8 +189,8 @@ class Addcart extends Component {
 
             <div id= "underline"></div>
             <br></br>
-            <em id = "dis_cost"> Rs.{this.state.dis_cost}</em>
-            <em id = "cost">Rs. {this.state.cost}</em>
+            <em id = "dis_cost"> <i class="fa fa-inr" aria-hidden="true"></i> {this.state.dis_cost}</em>
+            <em id = "cost"><i class="fa fa-inr" aria-hidden="true"></i> {this.state.cost}</em>
             <em id = "discount"> ({this.state.discount}% OFF)</em>
             <br></br>
             <em id = "taxes">inclusive of all taxes</em>
@@ -221,6 +223,8 @@ class Addcart extends Component {
                   <label class="xlarge" for="xlarge" >XL</label>
                 </Container>
             </div>
+            <br></br>
+            <br></br>
             { this.state.addcart ?
               <button onClick = {this.addtocart} class="addcart">
                  <i class="fa fa-shopping-cart" aria-hidden="true"></i> ADD TO CART</button>:

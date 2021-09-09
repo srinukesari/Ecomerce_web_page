@@ -91,20 +91,18 @@ class Itemdesc extends Component {
         });
       }
       else{
+        this.props.total_item_count(1);
         this.setState({
           cost : this.state.single_item_cost * (this.state.quantity + 1),
           dis_amount:this.state.single_item_discount * (this.state.quantity + 1)
         })
-        this.setState({
-          quantity : this.state.quantity + 1,
-        });
         const cart_item ={
           "user_id": this.state.user_id,
           "item_list":[
             {
               "size": this.state.size,
               "item_id": this.state.item_id,
-              "quantity": this.state.quantity
+              "quantity": this.state.quantity + 1
             }
           ]
         }
@@ -113,7 +111,11 @@ class Itemdesc extends Component {
             console.log(response.data);
             console.log("quantity incre added to db")
         })
+        this.setState({
+          quantity : this.state.quantity + 1,
+        });
         this.props.cost_prop(this.state.single_item_cost ,this.state.single_item_discount);
+        
       }
     }
 
@@ -129,6 +131,7 @@ class Itemdesc extends Component {
         });
       }
       else{
+        this.props.total_item_count(-1);
         this.remove_item();
       }
     }
@@ -152,7 +155,7 @@ class Itemdesc extends Component {
           </div>
           <div className = "cart_item_details">
             <em id="cart_item_brand">{this.state.brand}</em>
-            <em id = "cart_item_cost">Rs.{this.state.cost - this.state.dis_amount}</em>
+            <em id = "cart_item_cost"><i class="fa fa-inr" aria-hidden="true"></i> {this.state.cost - this.state.dis_amount}</em>
             <br></br>
             <em id= "cart_item_desc">{this.state.desc}</em>
             <br></br>
@@ -162,6 +165,7 @@ class Itemdesc extends Component {
             <button className="quantity_button" onClick = {this.increment} >+</button>
             <br></br>
             
+            <div id = "underline"></div>
             <button className="remove_button" onClick = {this.remove_item}>REMOVE</button>
             <button className="moveto_button" onClick = {this.remove_item}>MOVE TO WISHLIST</button>
 
