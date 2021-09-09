@@ -62,6 +62,7 @@ class Itemdesc extends Component {
       console.log(this.props.user)
       console.log(this.state.item_id)
       console.log(this.state.size)
+      this.props.total_item_count(-1*this.state.quantity);
       await axios.post("https://xxysp0vbbi.execute-api.us-east-2.amazonaws.com/api_js/remove_item_from_usercart",
       {"user_id":this.props.user,"item_id":this.state.item_id,"size":this.state.size}).
       then(response => {
