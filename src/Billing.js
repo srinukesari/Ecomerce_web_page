@@ -86,10 +86,16 @@ class Billing extends Component {
 
     return (
       <Container>
-          <br></br>
-          <br></br>
-          <em id = "my_cart_title">My Shopping Cart ( {this.state.total_items_count} Items ) </em>
-          <em id = "total_billing_amount">Total: <i class="fa fa-inr" aria-hidden="true"></i> {this.state.total_mrp - this.state.total_discount}</em>
+        <br></br>
+        <br></br>
+        {this.state.cart_full ?
+          <div>
+            <em id = "my_cart_title">My Shopping Cart ( {this.state.total_items_count} Items ) </em>
+            <em id = "total_billing_amount">Total: <i class="fa fa-inr" aria-hidden="true"></i> {this.state.total_mrp - this.state.total_discount}</em>
+          </div>
+          :
+          <div></div>
+        }
         <div className = "row">
         {this.state.cart_full ?
           <div className = "col-md-*" id ='left_bill'>
