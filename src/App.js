@@ -53,7 +53,7 @@ class App extends Component {
         </div>
         </center>
         { this.state.billing ?
-        <Billing user = {this.state.user_id}/> :
+        <Billing user = {this.state.user_id} gotohome = {this.home} /> :
         <Addcart user = {this.state.user_id} gotocart = {this.gotocart}/> 
         }
         

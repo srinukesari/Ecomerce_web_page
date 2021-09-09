@@ -266,12 +266,24 @@ body{
 }
 
 #cart_empty{
-  font-size: xx-large;
-  font-weight: bolder;
-  color: tomato;
-  margin: 10rem 0rem 0rem 15rem;
-  padding-right: 15vw;
-  float: left;
+  font-size: x-large;
+  font-weight: bold;
+  color:#424553;
+  padding-top:5vw;
+  width: 100vw;
+}
+
+#emptycart_desc{
+  color: #7e818c;
+  font-size: small;
+  font-weight: normal;
+}
+.continue_shopping{
+  border: none;
+  font-size: medium;
+  font-weight: normal;
+  background-color: transparent;
+  color: #ff3f6c;
 }
 
 .cart_items{
