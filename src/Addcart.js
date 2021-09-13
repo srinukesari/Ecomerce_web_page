@@ -227,9 +227,10 @@ class Addcart extends Component {
             <br></br>
             { this.state.addcart ?
               <button onClick = {this.addtocart} class="addcart">
-                 <i class="fa fa-shopping-cart" aria-hidden="true"></i> ADD TO CART</button>:
+                <i class="fa fa-shopping-cart" aria-hidden="true"></i> ADD TO CART</button>
+              :
               <button onClick = {this.cart} class = "addcart">GO TO CART 
-               <i class="fa fa-arrow-right" aria-hidden="true"></i> </button>
+                <i class="fa fa-arrow-right" aria-hidden="true"></i> </button>
             }
             <button class="wishlist">
             <i class="fa fa-heart-o" aria-hidden="true"></i>WISHLIST</button>
